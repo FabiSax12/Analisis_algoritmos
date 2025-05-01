@@ -60,7 +60,7 @@ public class SaveResults {
                     int nValue = result.getN();
 
                     writer.printf(
-                            "%d,%d,%d,%d,%d,%d%n",
+                            "%d,%d,%d,%d,%f,%d%n",
                             nValue,
                             assignments,
                             comparisons,
