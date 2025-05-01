@@ -1,11 +1,9 @@
 import algorithms.*;
 import benchmark.BenchmarkResult;
 import benchmark.BenchmarkRunner;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
 
 public class Main {
 
@@ -36,8 +34,8 @@ public class Main {
                     BenchmarkResult result = runner.runBenchmark(algorithm, n);
                     allResults.add(result);
                     System.out.printf(
-                            "Terminado (Tiempo: %.0f ms)%n",
-                            result.getExecutionTime(TimeUnit.MILLISECONDS) / 1.0
+                            "Terminado (Tiempo: %.5f ms)%n",
+                            result.getExecutionTime()
                     );
                 } catch (Exception e) {
                     System.out.printf(
@@ -69,11 +67,11 @@ public class Main {
             }
 
             System.out.printf(
-                    "%-33s | %-9d | %-5d | %-12.0f | %-15d | %-15d | %-20d | %d%n",
+                    "%-33s | %-9d | %-5d | %-12.5f | %-15d | %-15d | %-20d | %d%n",
                     result.getAlgorithmName(),
                     result.getN(),
                     result.getLinesOfCode(),
-                    result.getExecutionTime(TimeUnit.MILLISECONDS) / 1.0,
+                    result.getExecutionTime(),
                     result.getComparisons(),
                     result.getAssignments(),
                     result.getComparisons() + result.getAssignments(),

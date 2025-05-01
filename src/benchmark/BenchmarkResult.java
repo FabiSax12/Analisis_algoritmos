@@ -40,6 +40,10 @@ public class BenchmarkResult {
         return n;
     }
 
+    public double getExecutionTime() {
+        return executionTimeNanos / 1_000_000.0;
+    }
+
     public long getExecutionTime(TimeUnit unit) {
         return unit.convert(executionTimeNanos, TimeUnit.NANOSECONDS);
     }
@@ -71,7 +75,7 @@ public class BenchmarkResult {
                 algorithmName,
                 n,
                 linesOfCode,
-                getExecutionTime(TimeUnit.MILLISECONDS), // Convertir a ms con decimales
+                getExecutionTime(), // Convertir a ms con decimales
                 comparisons,
                 assignments,
                 primeCount

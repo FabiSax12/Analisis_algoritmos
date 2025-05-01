@@ -55,7 +55,7 @@ public class SaveResults {
                     long assignments = result.getAssignments();
                     long comparisons = result.getComparisons();
                     long executedLines = assignments + comparisons; // Calcular suma
-                    long timeMs = result.getExecutionTime(TimeUnit.MILLISECONDS); // Tiempo en ms
+                    double timeMs = result.getExecutionTime(); // Tiempo en ms
                     int loc = result.getLinesOfCode();
                     int nValue = result.getN();
 
